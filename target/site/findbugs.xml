@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<BugCollection version='3.0.1' threshold='medium' effort='min'><file classname='Utils'><BugInstance type='REC_CATCH_EXCEPTION' priority='Normal' category='STYLE' message='Exception is caught when Exception is not thrown in Utils.normalizeWord(String)' lineNumber='67'/></file><Error></Error><Project><SrcDir>C:\Users\Rene\Documents\test01\src\main\java</SrcDir><SrcDir>C:\Users\Rene\Documents\test01\src\test\java</SrcDir></Project></BugCollection>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="5.5.1" timestamp="2017-01-10T11:03:16.969">
+<file name="C:\Users\Rene\Documents\test01\src\main\java\Utils.java">
+<violation beginline="34" endline="34" begincolumn="32" endcolumn="50" rule="BigIntegerInstantiation" ruleset="Basic" class="Utils" method="computeFactorial" externalInfoUrl="https://pmd.github.io/pmd-5.5.1/pmd-java/rules/java/basic.html#BigIntegerInstantiation" priority="3">
+Dont create instances of already existing BigInteger and BigDecimal (ZERO, ONE, TEN)
+</violation>
+</file>
+<file name="C:\Users\Rene\Documents\test01\src\main\java\Vectors.java">
+<violation beginline="21" endline="21" begincolumn="14" endcolumn="22" rule="UselessParentheses" ruleset="Unnecessary" class="Vectors" method="equal" externalInfoUrl="https://pmd.github.io/pmd-5.5.1/pmd-java/rules/java/unnecessary.html#UselessParentheses" priority="4">
+Useless parentheses.
+</violation>
+<violation beginline="21" endline="21" begincolumn="29" endcolumn="37" rule="UselessParentheses" ruleset="Unnecessary" class="Vectors" method="equal" externalInfoUrl="https://pmd.github.io/pmd-5.5.1/pmd-java/rules/java/unnecessary.html#UselessParentheses" priority="4">
+Useless parentheses.
+</violation>
+<violation beginline="42" endline="42" begincolumn="14" endcolumn="22" rule="UselessParentheses" ruleset="Unnecessary" class="Vectors" method="scalarMultiplication" externalInfoUrl="https://pmd.github.io/pmd-5.5.1/pmd-java/rules/java/unnecessary.html#UselessParentheses" priority="4">
+Useless parentheses.
+</violation>
+<violation beginline="42" endline="42" begincolumn="29" endcolumn="37" rule="UselessParentheses" ruleset="Unnecessary" class="Vectors" method="scalarMultiplication" externalInfoUrl="https://pmd.github.io/pmd-5.5.1/pmd-java/rules/java/unnecessary.html#UselessParentheses" priority="4">
+Useless parentheses.
+</violation>
+</file>
+</pmd>
