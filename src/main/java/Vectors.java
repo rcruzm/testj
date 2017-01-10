@@ -18,7 +18,7 @@ public final class Vectors {
      * Checks whether the given vectors are equal.
      */
     public static boolean equal(int[] a, int[] b) {
-        if ((a == null) || (b == null)) {
+        if (a == null || b == null) {
             throw new IllegalArgumentException("null argument");
         }
 
@@ -39,7 +39,7 @@ public final class Vectors {
      * Scalar multiplication of given vectors.
      */
     public static int scalarMultiplication(int[] a, int[] b) {
-        if ((a == null) || (b == null)) {
+        if (a == null || b == null) {
             throw new IllegalArgumentException("null argument");
         }
 
