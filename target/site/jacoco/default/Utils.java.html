@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Utils.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">test01</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Utils.java</span></div><h1>Utils.java</h1><pre class="source lang-java linenums">/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+
+
+import java.lang.reflect.Method;
+import java.math.BigInteger;
+
+/**
+ *
+ * @author  nb
+ */
+<span class="nc bnc" id="L15" title="All 2 branches missed.">public class Utils {</span>
+
+<span class="nc" id="L17">    private Utils() { }</span>
+
+
+    public static String concatWords(String... words) {
+<span class="nc" id="L21">        StringBuilder buf = new StringBuilder();</span>
+<span class="nc bnc" id="L22" title="All 2 branches missed.">        for (String word : words) {</span>
+<span class="nc" id="L23">            buf.append(word);</span>
+        }
+<span class="nc" id="L25">        return buf.toString();</span>
+    }
+
+    public static String computeFactorial(int number) 
+                                               throws IllegalArgumentException {
+<span class="nc bnc" id="L30" title="All 2 branches missed.">        if (number &lt; 1) {</span>
+<span class="nc" id="L31">            throw new IllegalArgumentException(&quot;zero or negative parameter (&quot; + number + ')');</span>
+        }
+
+<span class="nc" id="L34">        BigInteger factorial = new BigInteger(&quot;1&quot;);</span>
+<span class="nc bnc" id="L35" title="All 2 branches missed.">        for (int i = 2; i &lt;= number; i++) {</span>
+<span class="nc" id="L36">            factorial = factorial.multiply(new BigInteger(String.valueOf(i)));</span>
+        }
+<span class="nc" id="L38">        return factorial.toString();</span>
+    }
+
+    public static String normalizeWord(String word) {
+        try {
+            int i;
+<span class="nc" id="L44">            Class&lt;?&gt; normalizerClass = Class.forName(&quot;java.text.Normalizer&quot;);</span>
+<span class="nc" id="L45">            Class&lt;?&gt; normalizerFormClass = null;</span>
+<span class="nc" id="L46">            Class&lt;?&gt;[] nestedClasses = normalizerClass.getDeclaredClasses();</span>
+<span class="nc bnc" id="L47" title="All 2 branches missed.">            for (i = 0; i &lt; nestedClasses.length; i++) {</span>
+<span class="nc" id="L48">                Class&lt;?&gt; nestedClass = nestedClasses[i];</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">                if (nestedClass.getName().equals(&quot;java.text.Normalizer$Form&quot;)) {</span>
+<span class="nc" id="L50">                    normalizerFormClass = nestedClass;</span>
+                }
+            }
+<span class="nc bnc" id="L53" title="All 4 branches missed.">            assert normalizerFormClass.isEnum();</span>
+<span class="nc" id="L54">            Method methodNormalize = normalizerClass.getDeclaredMethod(</span>
+                                                            &quot;normalize&quot;,
+                                                            CharSequence.class,
+                                                            normalizerFormClass);
+<span class="nc" id="L58">            Object nfcNormalization = null;</span>
+<span class="nc" id="L59">            Object[] constants = normalizerFormClass.getEnumConstants();</span>
+<span class="nc bnc" id="L60" title="All 2 branches missed.">            for (i = 0; i &lt; constants.length; i++) {</span>
+<span class="nc" id="L61">                Object constant = constants[i];</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">                if (constant.toString().equals(&quot;NFC&quot;)) {</span>
+<span class="nc" id="L63">                    nfcNormalization = constant;</span>
+                }
+            }
+<span class="nc" id="L66">            return (String) methodNormalize.invoke(null, word, nfcNormalization);</span>
+<span class="nc" id="L67">        } catch (Exception ex) {</span>
+<span class="nc" id="L68">            return null;</span>
+        }
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.8.201612092310</span></div></body></html>
