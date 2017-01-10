@@ -12,7 +12,7 @@
  */
 public final class Vectors {
 
-    private Vectors() {}
+    public Vectors() {}
 
     /**
      * Checks whether the given vectors are equal.
